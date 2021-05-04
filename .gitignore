@@ -1,0 +1,6 @@
+accesslog
+keys.txt
+env/
+__pycache__/
+log_data.csv
+plots/*
