@@ -20,5 +20,8 @@ This repo shows the stats of accesslog of the server to my [Dog Breed Classifier
 ## Devices Pie
 ![Device pie](plots/device_pie.png)
 
+## Cities Pie
+![Cities Pie](plots/cities_pie.png)
+
 ### Pewdie Pie
-<img src="plots/pewdiepie.jpg" width="200" height="200"/>
+<img src="plots/pewdiepie.jpg" width="250" height="250"/>

@@ -20,37 +20,59 @@ for line in data:
     # print(match, end = '\n\n')
 logging.info('Done.')
 
-ip_addresses = [log[0] for log in logs]
+# cities = [get_IP_details(log[0])['city'] for log in logs]
+# cities = []
+# for log in logs:
+#     IP_details = get_IP_details(log[0])
+#     if IP_details['device']:
+#         cities.append(IP_details['city'])
+
 browsers = []
 operatingsystems = []
 devices = []
+cities = []
 
 logging.info('Collecting data ...')
 for log in logs:
     result = parse_useragent(log[5])
     # print(result)
-    browsers.append(result["software_name"])
-    operatingsystems.append(result["operating_system_name"])
     if result["operating_system_name"] == 'macOS':
-        devices.append('Macintosh')
+        device = 'Macintosh'
+        devices.append(device)
+        cities.append(get_IP_details(log[0])['city'])
+        browsers.append(result["software_name"])
+        operatingsystems.append(result["operating_system_name"])
     elif result["operating_system_name"] == 'Windows':
-        devices.append('Windows Device')
-    else:
-        devices.append(result["simple_operating_platform_string"])
+        device = 'Windows Device'
+        devices.append(device)
+        cities.append(get_IP_details(log[0])['city'])
+        browsers.append(result["software_name"])
+        operatingsystems.append(result["operating_system_name"])
+    elif result["simple_operating_platform_string"]:
+        device = result["simple_operating_platform_string"]
+        devices.append(device)
+        cities.append(get_IP_details(log[0])['city'])
+        browsers.append(result["software_name"])
+        operatingsystems.append(result["operating_system_name"])
+
 logging.info('Done.')
+print(devices)
+print(cities)
 
 # print(ip_addresses)
 # print(browsers)
 # print(operatingsystems)
 # print(devices)
 
-dic = {'ip_addresses' : ip_addresses,
+dic = {'cities' : cities,
         'browsers' : browsers,
         'operatingsystems' : operatingsystems,
         'devices' : devices}
 
 logging.info('Saving data to csv file ...')
 df = pd.DataFrame(dic)
+
+
 df.to_csv('log_data.csv')
 logging.info('Done.')
 # -----------------------------------------------------------------------

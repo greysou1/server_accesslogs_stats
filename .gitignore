@@ -3,3 +3,4 @@ keys.txt
 env/
 __pycache__/
 log_data.csv
+.DS_Store
