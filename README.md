@@ -8,7 +8,7 @@ This repo shows the stats of accesslog of the server to my [Dog Breed Classifier
 * [Browsers Pie](#browsers-pie)
 * [Operating Systems Pie](#operating-systems-pie)
 * [Devices Pie](#devices-pie)
-* [Pewdie Pie](#pewdie-pie)
+* [Cities Pie](#cities-pie)
 
 
 ## Browsers Pie
@@ -23,5 +23,5 @@ This repo shows the stats of accesslog of the server to my [Dog Breed Classifier
 ## Cities Pie
 ![Cities Pie](plots/cities_pie.png)
 
-### Pewdie Pie
+## Pewdie Pie
 <img src="plots/pewdiepie.jpg" width="250" height="250"/>
