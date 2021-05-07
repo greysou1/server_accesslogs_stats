@@ -12,7 +12,7 @@ This repo shows the stats of accesslog of the server to my [Dog Breed Classifier
 
 ![Map](plots/map.jpg)
 <br>(plotted using [GeoPandas](https://geopandas.org/index.html))
-<br><i>ref: </i> (This StackOverFlow answer)[https://stackoverflow.com/a/53233489]
+<br><i>ref: </i> [This StackOverFlow answer](https://stackoverflow.com/a/53233489)
 
 ## Browsers Pie
 ![Browser pie](plots/browser_pie.png)
