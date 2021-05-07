@@ -20,17 +20,12 @@ for line in data:
     # print(match, end = '\n\n')
 logging.info('Done.')
 
-# cities = [get_IP_details(log[0])['city'] for log in logs]
-# cities = []
-# for log in logs:
-#     IP_details = get_IP_details(log[0])
-#     if IP_details['device']:
-#         cities.append(IP_details['city'])
 
 browsers = []
 operatingsystems = []
 devices = []
 cities = []
+ip_addresses = []
 
 logging.info('Collecting data ...')
 for log in logs:
@@ -39,18 +34,21 @@ for log in logs:
     if result["operating_system_name"] == 'macOS':
         device = 'Macintosh'
         devices.append(device)
+        ip_addresses.append(log[0])
         cities.append(get_IP_details(log[0])['city'])
         browsers.append(result["software_name"])
         operatingsystems.append(result["operating_system_name"])
     elif result["operating_system_name"] == 'Windows':
         device = 'Windows Device'
         devices.append(device)
+        ip_addresses.append(log[0])
         cities.append(get_IP_details(log[0])['city'])
         browsers.append(result["software_name"])
         operatingsystems.append(result["operating_system_name"])
     elif result["simple_operating_platform_string"]:
         device = result["simple_operating_platform_string"]
         devices.append(device)
+        ip_addresses.append(log[0])
         cities.append(get_IP_details(log[0])['city'])
         browsers.append(result["software_name"])
         operatingsystems.append(result["operating_system_name"])
@@ -67,7 +65,8 @@ print(cities)
 dic = {'cities' : cities,
         'browsers' : browsers,
         'operatingsystems' : operatingsystems,
-        'devices' : devices}
+        'devices' : devices,
+        'ip_addresses': ip_addresses}
 
 logging.info('Saving data to csv file ...')
 df = pd.DataFrame(dic)

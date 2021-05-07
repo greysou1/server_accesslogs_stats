@@ -10,6 +10,9 @@ This repo shows the stats of accesslog of the server to my [Dog Breed Classifier
 * [Devices Pie](#devices-pie)
 * [Cities Pie](#cities-pie)
 
+![Map](plots/map.png)
+(plotted using [GeoPandas](https://geopandas.org/index.html))
+<i>ref: </i> (This StackOverFlow answer)[https://stackoverflow.com/a/53233489]
 
 ## Browsers Pie
 ![Browser pie](plots/browser_pie.png)
